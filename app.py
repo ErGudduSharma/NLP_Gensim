@@ -47,3 +47,55 @@ print(model.wv.doesnt_match(['jon', 'rikon', 'arya', 'sansa', 'bran']))
 
 print("\nSimilar to 'daenerys':")
 print(model.wv.most_similar('daenerys', topn=5))
+
+
+
+
+
+# Gensim via Colab...
+
+# !pip install gensim nltk
+
+
+# import numpy as np 
+# import pandas as pd 
+
+# import gensim 
+# import os 
+# import nltk
+
+# from nltk import sent_tokenize 
+# from gensim.utils import simple_preprocess 
+
+# nltk.download('punkt')
+# nltk.download('punkt_tab')
+
+# story = []
+# for filename in os.listdir('/content/sample_data/gameofthrons'):
+#     f = open(os.path.join("/content/sample_data/gameofthrons" , filename)) 
+#     corpus = f.read() 
+#     raw_sent = sent_tokenize(corpus) 
+#     for sent in raw_sent :
+#         story.append(simple_preprocess(sent)) 
+        
+
+# print(len(story)) 
+
+# ### story 
+# model = gensim.models.Word2Vec(
+#     window = 10 ,
+#     min_count = 2
+# )
+
+# model.build_vocab(story) 
+
+# print(model.train(story, total_examples = model.corpus_count , epochs = model.epochs)) 
+
+# print(model.wv.most_similar('daenerys'))
+
+# print(model.wv.doesnt_match(['jon' , 'rikon' , 'arya' , 'sansa' , 'bran']) )
+
+
+# model.wv.doesnt_match(['cersei' , 'jaime' , 'bronn' , 'tyrion']) 
+
+# print(model.wv['jon']) 
